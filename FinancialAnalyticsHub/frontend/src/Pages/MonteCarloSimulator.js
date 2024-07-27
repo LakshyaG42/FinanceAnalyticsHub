@@ -106,6 +106,7 @@ const MonteCarloSimulator = () => {
 
     return (
         <div className="card">
+            <h2>Monte Carlo Simulator</h2>
             <form onSubmit={handleSubmit} className="monte-carlo-form">
                 <div className="form-group">
                     <label>
