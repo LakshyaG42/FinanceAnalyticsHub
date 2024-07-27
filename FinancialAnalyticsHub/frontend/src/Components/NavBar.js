@@ -1,15 +1,17 @@
+// NavBar.js
 import React from 'react';
-import './NavBar.css';
 import { Link } from 'react-router-dom';
+import './NavBar.css';
 
 function NavBar() {
   return (
     <div className="navbar">
-      <div className="navbar-content">
-        <Link to="/" className="navbar-link">Home</Link>
-        <Link to="/montecarlo" className="navbar-link">Monte Carlo Simulator</Link>
-        <button className="signin-button">Sign In</button>
-      </div>
+        <div className="logo">Lakshya Gour</div>
+        <ul className="nav-links">
+          <li><Link to="/" className="navbar-link">Dashboard</Link></li>
+          <li><Link to="/monte-carlo" className="navbar-link">MonteCarloSimulator</Link></li>
+        </ul>
+        <button className="sign-in-btn"><Link to="/auth" className="cta">Sign-In</Link></button>
     </div>
   );
 }

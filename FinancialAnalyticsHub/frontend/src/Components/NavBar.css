@@ -1,32 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+li, a, button, .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.logo {
+  cursor: pointer;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+.nav-links li a {
+  transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover {
+  color: #0088a9;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+  transform: translateY(-3px);
+}
+
+.sign-in-btn {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sign-in-btn:hover {
+  background-color: rgba(2, 119, 148, 0.8);
+  transform: translateY(-3px);
+}
+.cta {
+  color: #edf0f1;
+  text-decoration: none;
+}
 /* NavBar styles */
 .navbar {
-    background: #2C3E50;
-    color: #ECF0F1;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 93%;
+  padding: 10px 20px;
+  z-index: 1000;
+  margin-left:40px;
 }
 
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #ECF0F1;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.navbar-link {
-    color: #ECF0F1;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.signin-button {
-    background: #34495E;
-    border: none;
-    color: #ECF0F1;
-    padding: 5px 10px;
-    cursor: pointer;
-}

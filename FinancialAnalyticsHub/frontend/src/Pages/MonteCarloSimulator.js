@@ -120,7 +120,7 @@ const MonteCarloSimulator = () => {
                         <input type="number" value={initialValue} onChange={(e) => setInitialValue(e.target.value)} />
                     </label>
                 </div>
-                <button type="submit" disabled={loading}>
+                <button className='monte-carlo-button' type="submit" disabled={loading}>
                     {loading ? 'Running...' : 'Run Simulation'}
                 </button>
             </form>

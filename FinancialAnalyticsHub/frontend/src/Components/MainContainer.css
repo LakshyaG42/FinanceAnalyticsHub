@@ -1,20 +1,23 @@
 /* MainContainer styles */
 .main-container {
-  flex: 1;
-  padding: 20px;
-  background: #ECF0F1; /* Light grey */
-  overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  height: 100vh;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 60px;
+  background: #252424; /* Light grey */
+  margin: 30px 30px;
+  margin-top: 5px;
 }
 
 .content-card {
-  background: #FFFFFF; /* White */
+  background: #dbd8d8; /* White */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height:calc(100% - 40px);
   width: 100%;
-  max-width: 1200px;
+  margin: 20px;
 }
