@@ -7,9 +7,13 @@ li, a, button, .logo {
     color: #edf0f1;
     text-decoration: none;
 }
-
 .logo {
+  transition: all 0.3s ease 0s;
+}
+.logo:hover {
+  
   cursor: pointer;
+  color: #0088a9;
 }
 .nav-links {
   list-style: none;

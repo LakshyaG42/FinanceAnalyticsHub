@@ -17,9 +17,9 @@ const MonteCarloSimulator = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-
+    
         const stockList = stocks.split(',').map(stock => stock.trim().toUpperCase());
-
+    
         try {
             const response = await fetch('http://127.0.0.1:8000/api/montecarlo/', {
                 method: 'POST',
@@ -34,10 +34,16 @@ const MonteCarloSimulator = () => {
                     initial_value: initialValue
                 }),
             });
+    
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+    
             const data = await response.json();
             setResults(data.results);
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Fetch Error:', error);
+            alert(`An error occurred: ${error.message}`);
         } finally {
             setLoading(false);
         }
@@ -54,6 +60,17 @@ const MonteCarloSimulator = () => {
                 fill: false,
             })),
         };
+    };
+
+    const canSubmit = () => {
+        if (!stocks || !startDate || !endDate || !numSimulations || !initialValue) {
+            return false;
+        }
+    
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+    
+        return start < end;
     };
 
     const calculateAnalytics = () => {
@@ -89,48 +106,47 @@ const MonteCarloSimulator = () => {
 
     return (
         <div className="card">
-            <form onSubmit={handleSubmit}>
-                <div>
+            <form onSubmit={handleSubmit} className="monte-carlo-form">
+                <div className="form-group">
                     <label>
-                        Enter stock symbols (comma separated):
-                        <input type="text" value={stocks} onChange={(e) => setStocks(e.target.value)} />
+                    Enter stock symbols (comma separated):
+                    <input type="text" value={stocks} onChange={(e) => setStocks(e.target.value)} />
                     </label>
                 </div>
-                <div>
+                <div className="form-group">
                     <label>
-                        Start Date:
-                        <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+                    Start Date:
+                    <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
                     </label>
                 </div>
-                <div>
+                <div className="form-group">
                     <label>
-                        End Date:
-                        <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+                    End Date:
+                    <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
                     </label>
                 </div>
-                <div>
+                <div className="form-group">
                     <label>
-                        Number of Simulations:
-                        <input type="number" value={numSimulations} onChange={(e) => setNumSimulations(e.target.value)} />
+                    Number of Simulations:
+                    <input type="number" value={numSimulations} onChange={(e) => setNumSimulations(e.target.value)} />
                     </label>
                 </div>
-                <div>
+                <div className="form-group">
                     <label>
-                        Initial Portfolio Value:
-                        <input type="number" value={initialValue} onChange={(e) => setInitialValue(e.target.value)} />
+                    Initial Portfolio Value:
+                    <input type="number" value={initialValue} onChange={(e) => setInitialValue(e.target.value)} />
                     </label>
                 </div>
-                <button className='monte-carlo-button' type="submit" disabled={loading}>
+                <button className="monte-carlo-button" type="submit" disabled={loading || !canSubmit()}>
                     {loading ? 'Running...' : 'Run Simulation'}
                 </button>
             </form>
             {results && (
-                <div>
-                    <h2>Simulation Results</h2>
+                <div className='results'>
                     <div className="chart-container">
                         <Line data={generateChartData()} />
                     </div>
-                    <div>
+                    <div className='stats'>
                         <h3>Analytics</h3>
                         <p><strong>Mean Final Portfolio Value:</strong> ${analytics.finalMean?.toFixed(2)}</p>
                         <p><strong>Median Final Portfolio Value:</strong> ${analytics.finalMedian?.toFixed(2)}</p>
