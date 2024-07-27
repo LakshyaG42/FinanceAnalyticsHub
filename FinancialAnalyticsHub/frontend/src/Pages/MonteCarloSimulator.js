@@ -21,7 +21,7 @@ const MonteCarloSimulator = () => {
         const stockList = stocks.split(',').map(stock => stock.trim().toUpperCase());
     
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/montecarlo/', {
+            const response = await fetch('http://lakshyag42.serv00.net/api/montecarlo/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
