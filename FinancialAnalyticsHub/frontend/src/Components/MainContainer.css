@@ -1,0 +1,20 @@
+/* MainContainer styles */
+.main-container {
+  flex: 1;
+  padding: 20px;
+  background: #ECF0F1; /* Light grey */
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.content-card {
+  background: #FFFFFF; /* White */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 1200px;
+}

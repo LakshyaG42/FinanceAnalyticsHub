@@ -1,0 +1,54 @@
+/* General Styles */
+body {
+  margin: auto;
+  font-family: Arial, sans-serif;
+  color: #2C3E50;
+  background: #B9B9B9;
+  background: -moz-linear-gradient(left, #B9B9B9 0%, #CECECE 39%, #B7B7B7 100%);
+  background: -webkit-linear-gradient(left, #B9B9B9 0%, #CECECE 39%, #B7B7B7 100%);
+  background: linear-gradient(to right, #B9B9B9 0%, #CECECE 39%, #B7B7B7 100%);
+}
+/* App styles */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.navbar {
+  background: #2C3E50; /* Dark grey */
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.signin-button {
+  background: #2980B9; /* Blue */
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

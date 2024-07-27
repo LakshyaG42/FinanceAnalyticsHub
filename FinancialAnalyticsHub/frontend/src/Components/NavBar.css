@@ -1,0 +1,32 @@
+/* NavBar styles */
+.navbar {
+    background: #2C3E50;
+    color: #ECF0F1;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #ECF0F1;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navbar-link {
+    color: #ECF0F1;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.signin-button {
+    background: #34495E;
+    border: none;
+    color: #ECF0F1;
+    padding: 5px 10px;
+    cursor: pointer;
+}

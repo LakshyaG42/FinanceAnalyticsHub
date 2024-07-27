@@ -1,0 +1,34 @@
+/* SideMenu styles */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: #cad1d6;
+    color: #2C3E50;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
+.side-menu.open {
+    transform: translateX(0);
+}
+
+.side-menu-item {
+    color: #2C3E50;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.side-menu-item:hover {
+    background: #34495E;
+    color: #ECF0F1;
+    border-radius: 5px;
+}
