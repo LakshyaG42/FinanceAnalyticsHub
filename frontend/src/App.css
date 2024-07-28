@@ -1,4 +1,7 @@
 /* General Styles */
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 body {
   font-family: Arial, sans-serif;
   color: #2C3E50;

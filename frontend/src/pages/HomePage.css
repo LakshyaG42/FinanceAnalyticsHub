@@ -1,0 +1,128 @@
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header {
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+.brand {
+    font-size: 24px;
+}
+
+.hero {
+    background: url('../images/homepage-background.jpg') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cta-button {
+    background-color: #f60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.about, .features, .contact {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.feature-item {
+    width: 30%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #f60;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
+.home-hero__mouse-scroll-cont {
+    position: absolute;
+    bottom: 20px;
+    left: 50%; 
+    z-index: 1;
+    transform: translateX(-50%); }
+    @media only screen and (max-width: 37.5em) {
+      .home-hero__mouse-scroll-cont {
+        display: none; } }
+
+.mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid #eee;
+    border-radius: 60px;
+    position: relative;
+    overflow: hidden; }
+    .mouse::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        top: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #eee;
+        border-radius: 50%;
+        opacity: 1;
+        animation: wheel 1.3s infinite;
+        -webkit-animation: wheel 1.3s infinite; }
+@keyframes wheel {
+    to {
+        opacity: 0;
+        top: 27px; } }
+    
+    @-webkit-keyframes wheel {
+    to {
+        opacity: 0;
+        top: 27px; } }
+          

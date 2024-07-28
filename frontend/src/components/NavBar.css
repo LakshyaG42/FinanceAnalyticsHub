@@ -11,10 +11,15 @@ li, a, button, .logo {
   transition: all 0.3s ease 0s;
 }
 .logo:hover {
-  
   cursor: pointer;
   color: #0088a9;
 }
+.logo-link:hover {
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  color: #0088a9;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -47,7 +52,7 @@ button {
 
 .button:hover {
   background-color: rgba(0, 136, 169, 0.8);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .sign-in-btn {
@@ -60,7 +65,7 @@ button {
 }
 .sign-in-btn:hover {
   background-color: rgba(2, 119, 148, 0.8);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 .cta {
   color: #edf0f1;

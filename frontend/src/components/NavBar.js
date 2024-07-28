@@ -6,7 +6,7 @@ import './NavBar.css';
 function NavBar() {
   return (
     <div className="navbar">
-        <div className="logo">Lakshya Gour</div>
+        <div className="logo"><Link to="https://www.lakshyagour.com/" className="logo-link">Lakshya Gour</Link></div>
         <ul className="nav-links">
           <li><Link to="/FinancialAnalyticsHub" className="navbar-link">Dashboard</Link></li>
           <li><Link to="/FinancialAnalyticsHub/monte-carlo" className="navbar-link">MonteCarloSimulator</Link></li>

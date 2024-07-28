@@ -3,13 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   border-radius: 10px;
   padding: 20px;
   padding-top: 60px;
   background: #252424; /* Light grey */
   margin: 30px 30px;
   margin-top: 5px;
+  margin-bottom: 2vh;
+  
 }
 
 .content-card {
@@ -20,4 +22,10 @@
   height:calc(100% - 40px);
   width: 100%;
   margin: 20px;
+  overflow-y: scroll;
 }
+
+.content-card::-webkit-scrollbar {
+  display:none;
+}
+
