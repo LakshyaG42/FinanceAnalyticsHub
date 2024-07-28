@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/FinancialAnalyticsHub/static/css/main.4bd5768c.css",
-    "main.js": "/FinancialAnalyticsHub/static/js/main.48482ef4.js",
+    "main.css": "/FinancialAnalyticsHub/static/css/main.6eee3c7c.css",
+    "main.js": "/FinancialAnalyticsHub/static/js/main.13efdf18.js",
+    "static/media/homepage-background.jpg": "/FinancialAnalyticsHub/static/media/homepage-background.bd79343ba7b48b37e80a.jpg",
     "index.html": "/FinancialAnalyticsHub/index.html",
-    "main.4bd5768c.css.map": "/FinancialAnalyticsHub/static/css/main.4bd5768c.css.map",
-    "main.48482ef4.js.map": "/FinancialAnalyticsHub/static/js/main.48482ef4.js.map"
+    "main.6eee3c7c.css.map": "/FinancialAnalyticsHub/static/css/main.6eee3c7c.css.map",
+    "main.13efdf18.js.map": "/FinancialAnalyticsHub/static/js/main.13efdf18.js.map"
   },
   "entrypoints": [
-    "static/css/main.4bd5768c.css",
-    "static/js/main.48482ef4.js"
+    "static/css/main.6eee3c7c.css",
+    "static/js/main.13efdf18.js"
   ]
 }
