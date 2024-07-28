@@ -11,8 +11,8 @@ function MainContainer() {
       <NavBar />
       <div className="content-card">
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/monte-carlo" element={<MonteCarloSimulator />} />
+          <Route path="/FinancialAnalyticsHub" element={<HomePage />} />
+          <Route path="/FinancialAnalyticsHub/monte-carlo" element={<MonteCarloSimulator />} />
         </Routes>
       </div>
     </div>
