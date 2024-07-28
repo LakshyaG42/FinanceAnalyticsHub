@@ -20,7 +20,7 @@ li, a, button, .logo {
   display: flex;
   gap: 20px;
 }
-.nav-links.active {
+.active-navbar-link {
   font-weight: bold;
   border-bottom: 2px solid #fff; /* Highlight style */
   color:#0088a9;

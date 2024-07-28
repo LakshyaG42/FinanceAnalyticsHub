@@ -7,7 +7,6 @@ function SideMenu({ isOpen, onClose }) {
     <div className={`side-menu ${isOpen ? 'open' : ''}`}>
       <button className="close-menu" onClick={onClose}>×</button>
       <Link to="/montecarlo" className="nav-bar-item">Monte Carlo Simulator</Link>
-      {/* Add more menu items here as needed */}
     </div>
   );
 }
