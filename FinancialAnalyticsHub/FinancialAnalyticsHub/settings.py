@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'FinancialAnalyticsHub.urls'
 
 TEMPLATES = [
@@ -85,6 +86,8 @@ DATABASES = {
 }
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'http://www.lakshyagour.com',
+    'http://lakshyagour.com',
 ]
 
 # Password validation
