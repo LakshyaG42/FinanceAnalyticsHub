@@ -1,5 +1,6 @@
 import json
 import numpy as np
+import pandas as pd
 import datetime as dt
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -14,7 +15,7 @@ def monte_carlo_simulation(request):
             startDate = dt.datetime.strptime(data.get('start_date'), '%Y-%m-%d')
             endDate = dt.datetime.strptime(data.get('end_date'), '%Y-%m-%d')
             numOfSims = data.get('num_simulations', 100)
-            initialfolioValue = data.get('initial_value', 10000)
+            initialfolioValue = float(data.get('initial_value', 10000))
 
             if not stockList:
                 return JsonResponse({'error': 'No stocks provided'}, status=400)
