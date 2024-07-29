@@ -87,8 +87,11 @@ DATABASES = {
 }
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'https://www.lakshyagour.com',
+    'https://lakshyagour.com',
     'http://www.lakshyagour.com',
     'http://lakshyagour.com',
+    'https://lakshyag42.github.io',
 ]
 
 CORS_ALLOW_METHODS = [
