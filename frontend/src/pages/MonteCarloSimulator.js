@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import './MonteCarloSimulator.css'; // Import the CSS file
@@ -52,12 +52,13 @@ const MonteCarloSimulator = () => {
 
     const generateChartData = () => {
         if (!results) return {};
+        const colors = results.map((_, index) => `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.6)`);
         return {
             labels: Array.from({ length: results[0].length }, (_, i) => i + 1),
             datasets: results.map((simulation, index) => ({
                 label: `Simulation ${index + 1}`,
                 data: simulation,
-                borderColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.6)`,
+                borderColor: colors[index],
                 fill: false,
             })),
         };
@@ -104,6 +105,7 @@ const MonteCarloSimulator = () => {
     };
 
     const analytics = calculateAnalytics();
+    const chartData = useMemo(generateChartData, [results]); 
 
     return (
         <div className="card">
@@ -146,7 +148,7 @@ const MonteCarloSimulator = () => {
             {results && (
                 <div className='results'>
                     <div className="chart-container">
-                        <Line data={generateChartData()} />
+                        <Line data={chartData} />
                     </div>
                     <div className='stats'>
                         <h3>Analytics</h3>
