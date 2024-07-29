@@ -6,6 +6,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import yfinance as yf
 
+
+# Function to perform Monte Carlo simulation for Stock Portfolio
 @csrf_exempt
 def monte_carlo_simulation(request):
     if request.method == 'POST':
@@ -62,3 +64,5 @@ def get_data(stocks, start_date, end_date):
     except Exception as e:
         print(f"Error fetching data: {e}")
         return pd.Series(), pd.DataFrame()
+# End of Stock Portfolio Monte Carlo Simulation function
+
