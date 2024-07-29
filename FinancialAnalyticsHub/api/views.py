@@ -14,7 +14,7 @@ def monte_carlo_simulation(request):
             stockList = data.get('stocks')
             startDate = dt.datetime.strptime(data.get('start_date'), '%Y-%m-%d')
             endDate = dt.datetime.strptime(data.get('end_date'), '%Y-%m-%d')
-            numOfSims = data.get('num_simulations', 100)
+            numOfSims = float(data.get('num_simulations', 100))
             initialfolioValue = float(data.get('initial_value', 10000))
 
             if not stockList:
