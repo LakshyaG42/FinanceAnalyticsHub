@@ -113,7 +113,7 @@ const MonteCarloSimulator = () => {
             <form onSubmit={handleSubmit} className="monte-carlo-form">
                 <div className="form-group">
                     <label>
-                    Enter stock symbols (comma separated):
+                    Enter stock symbols (comma separated, min 2):
                     <input type="text" value={stocks} onChange={(e) => setStocks(e.target.value)} />
                     </label>
                 </div>
