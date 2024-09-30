@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,11 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xsqv083l&lrojz16_5hks8zin5^a&ank*4md!bk*7w6rd1*bol'
+# SECURITY WARNING: keep the secret key used in production secret! 
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
+
 
 ALLOWED_HOSTS = ['lakshyag42.serv00.net', 'localhost', '127.0.0.1']
 
@@ -40,7 +42,16 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'corsheaders',
+    'users',
+    'django.contrib.sites',  # GOOGLE START
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',  # Google provider
+    'social_django',
+    'django.contrib.sites', # GOOGLE END
 ]
+SITE_ID = 1  # Required for django-allauth
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,10 +92,18 @@ WSGI_APPLICATION = 'FinancialAnalyticsHub.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'your-database-name',
+        'CLIENT': {
+            'host': config('DATABASE_URL'),
+        }
     }
 }
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email', 'profile']
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://www.lakshyagour.com',
@@ -111,7 +130,7 @@ CORS_ALLOW_HEADERS = [
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
-
+AUTH_USER_MODEL = 'users.User'
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -127,7 +146,31 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+LOGIN_REDIRECT_URL = '/'  # Redirect users after login
+LOGOUT_REDIRECT_URL = '/'  # Redirect users after logout
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+    }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 

@@ -19,4 +19,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
+    path('users/', include('users.urls')), 
+    path('accounts/', include('allauth.urls')),  # Add allauth URLs
+    path('social-auth/', include('social_django.urls', namespace='social')),
 ]
+from django.urls import path, include
